@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Test -- TODO</title>
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/index.js"></script>
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+
+<body ng-app="angularApp" ng-controller="ToDoController">
+
+<div class="container">
+    <div class="row">
+        <h3 class="text-primary">Angular.Js Todo List</h3>
+    </div>
+    <div class="row">
+        <div class="">
+            <form ng-submit="addToDo()" class="form-group">
+                <div class="col-sm-9">
+                    <input class="form-control" type="text" ng-model="todo" class="form-control" placeholder="Add New">
+                </div>
+                <div class="col-sm-3">
+                    <input class="form-control btn btn-success" type="submit" value="Add New">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div >
+            <ul ng-repeat="todoItem in todoData">
+                <li>
+                    <input type="checkbox" ng-checked="selectAll" ng-model="todoItem.done">
+                    <span ng-bind="todoItem.todoText"></span>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+<br/>
+<br/>
+<br/>
+    <div class="row">
+        <div class="">
+            <div class="col-sm-3">
+                <button class="form-control btn btn-danger" ng-click="remove()">Remove Selected</button>
+            </div>
+            <div class="col-sm-3">
+                <input class="form-control btn btn-info" type="button"value="Select All" ng-click="optionToggled()">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
